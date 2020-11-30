@@ -38,19 +38,29 @@ const unorderedList = document.getElementsByTagName("li");
 */
 
 // build the nav
-function createNav(){
-  for (let item of allSections){
-  let toplistitem =document.createElement('li');
-  toplistitem.className.add+ 'menu__link';
-  toplistitem.dataset.nav = item.id;
-  toplistitem.id="nav-"+item.id;
-        toplistitem.innerText = item.dataset.nav;
+const navbarMenu = document.getElementById("navbar");
+const sections = document.querySelectorAll("section");
+function createNavbar(){
+  for (let item of sections){
+    let section = document.createElement("li");
+    section.className = "menu__link";
+    section.dataset.nav = item.id;
+    section.innerText = item.dataset.nav;
+    navbarMenu.appendChild(section);
+
+  };
+};
+createNavbar();
+
+
+
+
 //Adding click event listener on Nav
         toplistitem.addEventListener('click', function() {
             item.scrollIntoView({behavior: "smooth" })
             toplistitem.id = "nav-"+item.id;
         })
-       /*navbar.appendChild(Section 1);*/
+       navbar.appendChild(Section 1);
         //Add id
         toplistitem.id = navbar;
         toplistitem.classname = "navbar_menu"
@@ -61,14 +71,6 @@ function createNav(){
 //Nav list items
 
 
-var list = document.createElement("li");
-var node = document.createTextNode("Section 1");
-list.appendChild(node);
-
-var element = document.getElementById("ul");
-element.appendChild(list);
-
-createNav()
 
 function populatenavbarlist() {
     const navBar = document.querySelector('.navbar')
@@ -95,11 +97,11 @@ function setActive() {
 
 
             if (
-              section.getBoundingClientRect().top >= 0 &&
-              section.getBoundingClientRect().left >= 0 &&
-              section.getBoundingClientRect().bottom <=
+              section.section1().top >= 0 &&
+              section.section1().left >= 0 &&
+              section.section1().bottom <=
                 (window.innerHeight || document.documentElement.clientHeight) &&
-              section.getBoundingClientRect().right <=
+              section.section1().right <=
                 (window.innerWidth || document.documentElement.clientWidth)
             )
             {
@@ -113,7 +115,7 @@ function setActive() {
         }
 
     });
-};
+};*
 
 // Scroll to anchor ID using scrollTO event
 document.addEventListener("scroll", function() {
@@ -139,6 +141,4 @@ sectionList()
 setActive()
 }
 })
-}
-}
 }

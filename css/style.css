@@ -51,6 +51,9 @@ section {
     min-height: 80vh;
     padding-top:20%;
   }
+section:active{
+  color:yellow;
+}
 
 
 /* ---- Module Rules ---- */
@@ -127,6 +130,10 @@ section {
     padding: 1em;
     text-align: left;
 }
+.landing__container : active{
+  color:yellow;
+}
+
 
 @media only screen and (min-width: 35em){
     .landing__container {
@@ -209,7 +216,17 @@ section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
+.demo-class {
+    color: white;
+}
 
+.your-active-class h2 {
+    color: #cc1;
+}
+
+.your-active-class li {
+    color: white;
+}
 section.your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
